@@ -14,10 +14,10 @@ kubectl delete namespace argocd
 
 # Remove Docker
 echo "Removing Docker..."
-sudo apt remove --purge docker.io -y
-sudo apt autoremove -y
+sudo apt remove --purge docker docker-engine docker.io containerd runc -y
 sudo rm -rf /var/lib/docker
 sudo rm -rf /etc/docker
+sudo snap remove docker
 
 # Remove K3d
 echo "Removing K3d..."
