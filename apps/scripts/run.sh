@@ -7,6 +7,9 @@
 # kubectl port-forward svc/wil-playground -n argocd 8888:8888
 # curl http://localhost:8888
 
+
+# kubectl apply -f https://raw.githubusercontent.com/emmaOa/iouazzan/main/apps/app1.yaml
+
 # Update and install dependencies
 echo "Updating system and installing dependencies..."
 sudo apt update && sudo apt upgrade -y
@@ -14,7 +17,7 @@ sudo apt install -y curl git
 
 # Install Docker
 echo "Installing Docker..."
-sudo apt install -y docker.io
+sudo apt install docker.io 
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
@@ -30,11 +33,12 @@ k3d cluster create mycluster
 
 # Install kubectl (if not already installed)
 echo "Installing kubectl..."
-sudo apt install -y kubectl
+snap install kubectl --classic
 
 # Install Argo CD
 echo "Installing Argo CD..."
 kubectl create namespace argocd
+kubectl create namespace dev
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 # Wait for Argo CD to be ready
