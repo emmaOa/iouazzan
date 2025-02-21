@@ -4,7 +4,7 @@
 # After running this script, you can access Argo CD at http://localhost:8080.
 
 
-# kubectl port-forward svc/wil-playground -n argocd 8888:8888
+# kubectl port-forward svc/wil-playground -n dev 8888:8888
 # curl http://localhost:8888
 
 
