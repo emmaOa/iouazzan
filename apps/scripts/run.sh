@@ -17,7 +17,7 @@ sudo apt install -y curl git
 
 # Install Docker
 echo "Installing Docker..."
-sudo apt install docker.io 
+sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
