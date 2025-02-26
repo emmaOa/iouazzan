@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/emmaOa/iouazzan.git
-    path: apps
+    path: .
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
